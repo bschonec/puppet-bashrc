@@ -25,6 +25,8 @@ fi
 
 export PATH
 
-<% @key['bashprofile']['export'].each do |k| -%>
-export <%= k %>=<%= k.keys %>  value:   
+<%- if defined?(@key['bashprofile']['export']) -%>
+<% @key['bashprofile']['export'].each do |k, v| -%>
+export <%= k %>=<%= v %>
+<% end -%>
 <% end -%>
