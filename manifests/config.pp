@@ -167,6 +167,7 @@ class bashrc::config inherits bashrc {
                     group   => $current_user,
                     mode    => '0644',
                     content => template("${module_name}/skel/profile.erb"),
+                    validate_cmd => 'bash -n %',
                 }
 
                 file { "${userdirectory}/.profile":
