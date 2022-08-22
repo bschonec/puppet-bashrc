@@ -24,3 +24,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH
+
+<% @key['bashprofile']['export'].each do |k| -%>
+export <%= k %>=<%= k.keys %>  value:   
+<% end -%>
